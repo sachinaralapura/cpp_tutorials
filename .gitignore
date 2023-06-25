@@ -2,3 +2,6 @@ makefile
 ./a.out
 a.out
 .vscode
+DateTime/run.sh
+DateTime/a.out
+Result/rus.sh
