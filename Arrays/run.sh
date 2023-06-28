@@ -1,2 +1,2 @@
-g++ c_string.cpp -o output
+g++ Account_tab.cpp  ../Account/account.cpp -o output
 ./output < input.txt
