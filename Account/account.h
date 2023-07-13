@@ -24,8 +24,8 @@ public:
     ~Account();                                               // Destructor
 
     bool init(const string &, unsigned long, double);
-    void display();
-    bool isEmpty();
+    void display() const;
+    bool isEmpty() const;
 
     //---------------------get and set methods -----------------------------------
     const string &getName() { return name; }                                 // If the  access methods were defined as inline, access is

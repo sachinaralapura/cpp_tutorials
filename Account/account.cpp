@@ -30,7 +30,7 @@ bool Account::init(const string &i_name, unsigned long i_accno, double i_balance
 
 //---------------------------------------------------------------
 
-void Account::display()
+void Account::display() const
 {
     cout << fixed << setprecision(2)
          << "--------------------------------------\n"
@@ -52,7 +52,7 @@ void Account::display()
 // --- instead of jumping to the function defination , hence inline keyword suggests to the compiler that
 // --- a function should be expanded inline at the call site.
 
-inline bool Account::isEmpty()
+inline bool Account::isEmpty() const
 {
     if (balance== 0)
     {
