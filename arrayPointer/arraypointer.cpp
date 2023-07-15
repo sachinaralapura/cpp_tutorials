@@ -23,6 +23,9 @@
 #include <iostream>
 #include <string.h>
 using namespace std;
+
+// user defined function for strcpy;
+void stringCopy(char *source, char *dest);
 int main()
 {
     // int a = 24;
@@ -75,9 +78,76 @@ int main()
     // receives the address of the first array element.
 
     // In the case of C strings, the length is derived implicitly from the
-    // position of the terminating null character. In most other cases the length must be sup-
-    // plied explicitly(array of objects)
-    town[0] = 'X';
-    cout << town;
-    return 0;
+    // position of the terminating null character. In most other cases the length must be supplied explicitly(array of objects)
+    char source[] = "sachin";
+    char dest[20];
+    stringCopy(source, dest);
+    dest[6] = 'A';
+    dest[7] = 'S';
+    dest[8] = '\0';
+    cout << dest << endl;
+
+    // multidimensional arrays
+    int mulArr[][10] = {
+        {1, 2, 3, 4, 5, 6, 7, 8, 9, 10},
+        {11, 12, 13, 14, 15, 16, 17, 18, 19, 20},
+        {21, 22, 23, 24, 25, 26, 27, 28, 29, 30},
+        {31, 32, 33, 34, 35, 36, 37, 38, 39, 40},
+        {41, 42, 43, 44, 45, 46, 47, 48, 49, 50},
+        {51, 52, 53, 54, 55, 56, 57, 58, 59, 60},
+        {61, 62, 63, 64, 65, 66, 67, 68, 69, 70},
+        {71, 72, 73, 74, 75, 76, 77, 78, 79, 80},
+        {81, 82, 83, 84, 85, 86, 87, 88, 89, 90},
+        {91, 92, 93, 94, 95, 96, 97, 98, 99, 100}};
+
+    int *ptrarr;
+
+    cout << mulArr[1] << endl;
+    cout << "mulArr " << mulArr << endl;
+    int i = 0;
+    while (i < 10)
+    {
+        cout << "mulArr[" << i << "]  " << mulArr[i] << endl;
+        // cout << "mulArr[" <<  i << "]  " << mulArr+i << endl;
+        i++;
+    }
+
+    for (int ii = 0; ii < 10; ii++)
+    {
+        for (int j = 0; j < 10; j++)
+        {
+            cout << "mulArr[" << ii << "][" << j << "] " << mulArr[ii][j] << "\t";
+        }
+        cout << endl;
+    }
+
+    cout << "---------------------------------------------------------------------------\n";
+    for (int ii = 0; ii < 10; ii++)
+    {
+        for (int j = 0; j < 10; j++)
+        {
+            cout << "mulArr[" << ii << "][" << j << "] " << *(mulArr[ii] + j) << "\t" << (mulArr[ii] + j) << "\t";
+        }
+        cout << endl;
+    }
+
+    cout << "---------------------------------------------------------------------------\n";
+    ptrarr = mulArr[0];
+    for (int ii = 0; ii < 40; ii += 10)
+    {
+        for (int j = 0; j < 10; j++)
+        {
+            cout << "mulArr[" << ii << "][" << j << "] " << *(ptrarr + ii + j) << "\t ";
+        }
+        cout << endl;
+    }
+    cout << "---------------------------------------------------------------------------\n";
+
+    cout << *ptrarr << endl;
+}
+
+void stringCopy(char *source, char *des)
+{
+    while ((*des++ = *source++) != '\0')
+        ;
 }

@@ -1,6 +1,9 @@
 #include <iostream>
 #include <string>
 using namespace std;
+
+char* displayError(int);
+
 class MistBorn
 {
 public:
@@ -31,10 +34,12 @@ void MistBorn::setName(const string &name)
     this->name = name;
 }
 
-string MistBorn::getName() const {
+string MistBorn::getName() const
+{
     return this->name;
 }
-int main()
+
+int main(int argc, char *argv[])
 {
     MistBorn mistbornArr[10] = {
         MistBorn("Mistborn 1", 20, "Allomancy 1"),
@@ -57,6 +62,38 @@ int main()
 
     // MistBorn Vin("vin",21,"Mistborn");  // c
     // const MistBorn *ptrVin ;
-    // ptrVin = mistbornArr;            
+    // ptrVin = mistbornArr;
     // ptrVin->getName();
+
+    cout << displayError(1) << endl;
+    cout << argc << argv[0] << endl;
+}
+
+//========================================================================================
+/*
+Whenever you need a large number of pointers, you can define an array whose elements are pointers.
+        ex : Account* accPtr[5];
+        Any pointers not currently in use should have the value NULL.
+
+Initialization
+Example: Account* accPtr[5] = { &depo, &save, NULL};
+->The individual objects addressed by the pointers in an array do not need to occupy a
+  contiguous memory space
+
+*/
+
+char *displayError(int errorNumber)
+{
+    static const char *errorMsg[] = {
+        " Invalid error number ",
+        "Error 1: Too much data ",
+        "Error 2: Not enough memory ",
+        "Error 3: No data available "};
+
+    for (int i = 0; i < 4; i++)
+    {
+        cout << errorMsg[i] << endl;
+    }
+
+    return (char *)errorMsg[1];
 }
