@@ -1,4 +1,5 @@
 #include "mist.h"
+#include <fstream>
 #ifndef __ACCOUNT__
 #define __ACCOUNT__
 
@@ -31,6 +32,11 @@ public:
     const string &getName() { return name; }                                 // If the  access methods were defined as inline, access is
     void setName(const string &n) { n.size() < 1 ? name = name : name = n; } // just as efficient as direct access to the public members.
     double getBalance() const;                                               // getBalance method , example for 'Read-only method'
+
+    //------------------------ file write and read ---------------------------------
+    ostream& writeToFile(ostream& os) const;
+    istream& readFromFile(istream& is);
+
 };
 
 #endif
