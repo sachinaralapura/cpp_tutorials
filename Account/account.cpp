@@ -67,18 +67,3 @@ double Account::getBalance() const
     return balance; // read-only methods  , this method can alse be called on
 } // const Account objects
 
-ostream &Account::writeToFile(ostream os) const
-{
-    os << name << '\0';
-    os.write((char *)&accno, sizeof(accno));
-    os.write((char *)&balance, sizeof(balance));
-    return os;
-}
-
-istream &Account::readFromFile(istream is)
-{
-    getline(is, name, '\0');
-    is.read((char *)&accno, sizeof(accno));
-    is.read((char *)&balance, sizeof(balance));
-    return is;
-}

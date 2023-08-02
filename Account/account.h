@@ -20,9 +20,9 @@ private:
 
 public:
     //-------------------- construtor and destructor----------------------------
-    Account(){};                                              // implicit inline method (constructor)
-    Account(const string &, unsigned long = 0, double = 0.0); // constructor with default values;
-    ~Account();                                               // Destructor
+    Account() { cout << "default constructor called" << endl; }; // implicit inline method (constructor)
+    Account(const string &, unsigned long = 0, double = 0.0);    // constructor with default values;
+    ~Account();                                                  // Destructor
 
     bool init(const string &, unsigned long, double);
     void display() const;
@@ -34,9 +34,8 @@ public:
     double getBalance() const;                                               // getBalance method , example for 'Read-only method'
 
     //------------------------ file write and read ---------------------------------
-    ostream& writeToFile(ostream& os) const;
-    istream& readFromFile(istream& is);
-
+    ostream &writeToFile(ostream &os) const;
+    istream &readFromFile(istream &is);
 };
 
 #endif
