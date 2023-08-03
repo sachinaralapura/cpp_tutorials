@@ -43,7 +43,16 @@ int main()
          << FloatArr::maxIndex() << "!"
          << "\n (Quit by entering invalid input)"
          << endl;
-
-    while (cout << "\nIndex: " && cin >> i)
-        cout << i << ". element: " << random[i];
+    try
+    {
+        while (cout << "\nIndex: " && cin >> i)
+            if (i >= 0 && i < 100)
+                cout << i << ". element: " << random[i];
+            else
+                cout << "Enter indices between 0 to 100" << endl;
+    }
+    catch (const std::exception &e)
+    {
+        std::cerr << e.what() << '\n';
+    }
 }
