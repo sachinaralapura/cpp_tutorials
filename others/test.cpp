@@ -38,39 +38,53 @@
 #include <iostream>
 using namespace std;
 
-class Worker
+// class Worker
+// {
+// private:
+//     string name;
+
+// public:
+//     Worker(const string &s = " ") : name(s) {}
+//     virtual ~Worker() {}
+//     virtual void display() const{};
+//     virtual void income() const = 0;
+// };
+
+// class Employee : public Worker
+// {
+// private:
+//     long salary;
+
+// public:
+//     Employee(const string &s = " ", long sal = 0) : Worker(s), salary(sal) {}
+//     void display() const
+//     {
+//         cout << "display" << endl;
+//     }
+//     void income() const
+//     {
+//         cout << salary << endl;
+//     }
+// };
+
+// int main()
+// {
+
+//     Worker *worker = new Employee("ravi", 12000);
+//     worker->income();
+//     return 0;
+// }
+
+int main(int argc, char const *argv[])
 {
-private:
-    string name;
 
-public:
-    Worker(const string &s = " ") : name(s) {}
-    virtual ~Worker() {}
-    virtual void display() const{};
-    virtual void income() const = 0;
-};
-
-class Employee : public Worker
-{
-private:
-    long salary;
-
-public:
-    Employee(const string &s = " ", long sal = 0) : Worker(s), salary(sal) {}
-    void display() const
-    {
-        cout << "display" << endl;
+    char *ptr;
+    char str[6];
+    cin >> str;
+    ptr = str;
+    for (char *i = ptr; *i != '\0'  ; i++){
+            cout << *i;
     }
-    void income() const
-    {
-        cout << salary << endl;
-    }
-};
 
-int main()
-{
-
-    Worker *worker = new Employee("ravi", 12000);
-    worker->income();
-    return 0;
+        return 0;
 }

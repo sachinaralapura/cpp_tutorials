@@ -141,6 +141,10 @@ using namespace std;
 
 class Car
 {
+
+public:
+    const int pistons = 34;
+
 private:
     long nr;
     string producer;
@@ -228,9 +232,11 @@ passengerCar::passengerCar(long numberOfDoors, int numberOfSeats, float milage, 
 void passengerCar::display() const
 {
     Car::display();
+    cout << Car::pistons << endl;
     // cout << secret << endl;
-    cout << "number of Door " << getNumberOfDoors() << endl
-         << "number of seats " << getNumberOfSeats() << endl
-         << "Milage " << getMilage() << endl
-         << "safety Rating " << getSafetyRating() << endl;
+    cout
+        << "number of Door " << getNumberOfDoors() << endl
+        << "number of seats " << getNumberOfSeats() << endl
+        << "Milage " << getMilage() << endl
+        << "safety Rating " << getSafetyRating() << endl;
 }
