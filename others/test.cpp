@@ -75,16 +75,30 @@ using namespace std;
 //     return 0;
 // }
 
+// int main(int argc, char const *argv[])
+// {
+
+//     char *ptr;
+//     char str[6];
+//     cin >> str;
+//     ptr = str;
+//     for (char *i = ptr; *i != '\0'  ; i++){
+//             cout << *i;
+//     }
+
+//         return 0;
+// }
+
 int main(int argc, char const *argv[])
 {
-
-    char *ptr;
-    char str[6];
-    cin >> str;
-    ptr = str;
-    for (char *i = ptr; *i != '\0'  ; i++){
-            cout << *i;
-    }
-
+        int a = 10;
+        int *aptr = &a;
+        int **ptrptr = &aptr;
+        cout << "a :" << a << endl;
+        cout << "address of a  :" << &a << endl;
+        cout << "contents of pointer :" << aptr << endl;
+        cout << "pointer  :" << *aptr << endl;
+        cout << "address of pointer :" << &aptr << endl;
+        cout << "poniter to pointer " << ptrptr << endl;
         return 0;
 }
